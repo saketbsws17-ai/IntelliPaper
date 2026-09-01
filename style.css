@@ -1,0 +1,655 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg: #070b16;
+    --panel: #10182c;
+    --border: #293653;
+
+    --text: #f5f7ff;
+    --muted: #929db8;
+
+    --primary: #695cff;
+    --secondary: #a44cff;
+
+    --green: #20d6a0;
+}
+/*BODY
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+    /* Background */
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #38257a55,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #5b1b6b44,
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Common styling */
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+.hidden {
+    display: none !important;
+}
+.muted,
+small {
+    color: var(--muted);
+}
+/* Small heading used throughout the website */
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a39bff;
+    font-weight: bold;
+}
+   /* LOGIN / WELCOME PAGE
+   ========================================================= */
+.login-page {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 20px;
+}
+/* Main login card */
+.login-card {
+    width: min(950px, 100%);
+    min-height: 560px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    background: #0d1425ee;
+
+    border: 1px solid var(--border);
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    box-shadow: 0 30px 90px #0008;
+
+    animation: appear 0.6s ease;
+}
+   /* WELCOME SECTION
+   ========================================================= */
+.welcome {
+    padding: 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #695cff35,
+            transparent 45%
+        ),
+        #10182c;
+}
+/* IQ logo */
+.logo {
+    width: 65px;
+    height: 65px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 18px;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow: 0 10px 35px #695cff55;
+}
+/* Welcome heading */
+.welcome h1 {
+    font-size: 44px;
+
+    margin: 20px 0 12px;
+}
+/* IQPG highlighted text */
+.welcome h1 span {
+    color: #a58cff;
+}
+/* Welcome description */
+.welcome p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+   /* FLOATING ANIMATION
+   ========================================================= */
+
+.orb {
+    width: 145px;
+    height: 145px;
+
+    margin: 35px 0 25px auto;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 55px;
+
+    background:
+        radial-gradient(
+            circle,
+            #887cff55,
+            transparent 65%
+        );
+
+    animation: float 3s infinite;
+}
+   /* FEATURE TAGS
+   ========================================================= */
+
+.tags {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.tags b {
+    font-size: 11px;
+
+    padding: 9px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    color: #c5cce0;
+}
+/* 
+   7. LOGIN FORM
+   ========================================================= */
+
+.login {
+    padding: 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.login h2 {
+    font-size: 29px;
+}
+
+.login > .muted {
+    margin: 8px 0 22px;
+}
+/* ROLE SELECTION
+   ========================================================= */
+
+.roles {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+}
+.role {
+    padding: 11px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #080e1c;
+
+    color: var(--muted);
+
+    transition: 0.2s;
+}
+/* Selected / Hover role */
+.role.active,
+.role:hover {
+    color: white;
+
+    border-color: var(--primary);
+
+    background: #695cff20;
+
+    transform: translateY(-2px);
+}
+   /* INPUT FIELDS
+   ========================================================= */
+
+label {
+    display: block;
+
+    color: #b7bfd3;
+
+    font-size: 13px;
+
+    margin: 13px 0 7px;
+}
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #080e1c;
+    color: white;
+    outline: none;
+}
+/* Input focus effect */
+input:focus {
+    border-color: var(--primary);
+    box-shadow:
+        0 0 0 3px #695cff20;
+}
+/* LOGIN BUTTON
+   ========================================================= */
+.primary {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 10px 30px #695cff35;
+
+    transition: 0.25s;
+}
+/* Button hover */
+.primary:hover {
+    transform: translateY(-2px);
+}
+/* Arrow */
+.primary span {
+    float: right;
+}
+/* Demo message */
+.hint {
+    text-align: center;
+
+    margin-top: 17px;
+
+    font-size: 10px;
+}
+/* SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 245px;
+    padding: 20px 15px;
+    background: #080d1be8;
+    border-right: 1px solid var(--border);
+    backdrop-filter: blur(15px);
+}
+/* BRAND / LOGO
+   ========================================================= */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    padding: 5px 8px 25px;
+}
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 13px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+/* NAVIGATION
+   ========================================================= */
+
+#nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.nav-btn {
+    padding: 13px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    text-align: left;
+    transition: 0.2s;
+}
+/* Navigation hover / active */
+.nav-btn:hover,
+.nav-btn.active {
+    color: white;
+    background: #695cff20;
+    border-color: #695cff35;
+    transform: translateX(3px);
+}
+/* SIDEBAR USER
+   ========================================================= */
+.user {
+    position: absolute;
+    bottom: 18px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+}
+/* User avatar */
+.avatar {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #695cff25;
+}
+/* User name and role */
+.user b,
+.user small {
+    display: block;
+}
+.user small {
+    font-size: 10px;
+    margin-top: 3px;
+}
+/* MAIN DASHBOARD AREA
+   ========================================================= */
+.main {
+    margin-left: 245px;
+    padding: 27px;
+}
+/*TOP NAVIGATION BAR
+   ========================================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
+}
+header h2 {
+    margin-top: 5px;
+    font-size: 29px;
+}
+/* Right side buttons */
+.top-actions {
+    display: flex;
+    gap: 8px;
+}
+.top-actions button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--panel);
+    color: white;
+}
+/* DASHBOARD WELCOME BANNER
+   ========================================================= */
+.banner {
+    padding: 24px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background:
+        radial-gradient(
+            circle at 85%,
+            #695cff30,
+            transparent 30%
+        ),
+        #11172a;
+    animation: up 0.4s;
+}
+.banner h3 {
+    font-size: 21px;
+}
+.banner p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 7px;
+}
+/* STATISTICS CARDS
+   ========================================================= */
+.stats {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 15px;
+}
+.card {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background:
+        linear-gradient(
+            145deg,
+            #111a2f,
+            #0c1222
+        );
+    box-shadow:
+        0 15px 45px #0004;
+    animation: up 0.4s;
+}
+.label {
+    color: var(--muted);
+    font-size: 12px;
+}
+.number {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.green {
+    color: var(--green);
+}
+/* DASHBOARD SECTIONS
+   ========================================================= */
+.sections {
+    display: grid;
+    grid-template-columns:
+        1.4fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+.card h3 {
+    font-size: 16px;
+}
+.sub {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+/* ACTIVITY LIST
+   ========================================================= */
+.activity {
+    margin-top: 15px;
+}
+.item {
+    padding: 13px 0;
+    border-bottom: 1px solid #222c43;
+    display: flex;
+    gap: 11px;
+}
+.item:last-child {
+    border: none;
+}
+.item-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #695cff18;
+}
+.item b,
+.item small {
+    display: block;
+}
+.item b {
+    font-size: 12px;
+}
+.item small {
+    font-size: 10px;
+    margin-top: 3px;
+}
+/* QUICK ACTION BUTTONS
+   ========================================================= */
+.quick {
+    display: grid;
+    gap: 9px;
+    margin-top: 17px;
+}
+.quick button {
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #080e1c;
+    color: white;
+    text-align: left;
+    transition: 0.2s;
+}
+.quick button:hover {
+    border-color: var(--primary);
+    transform: translateX(3px);
+}
+/* TOAST MESSAGE
+   ========================================================= */
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    padding: 13px 17px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #121c31;
+    box-shadow:
+        0 15px 40px #0008;
+}
+/* ANIMATIONS
+   ========================================================= */
+/* Login card animation */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Dashboard cards animation */
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Floating orb animation */
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+/* TABLET RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 850px) {
+    .login-card {
+        grid-template-columns: 1fr;
+    }
+    .welcome {
+        display: none;
+    }
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    .sections {
+        grid-template-columns: 1fr;
+    }
+}
+/* MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 600px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    .user {
+        position: static;
+        margin-top: 15px;
+    }
+    .main {
+        margin-left: 0;
+        padding: 17px;
+    }
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    header {
+        align-items: flex-start;
+    }
+}
