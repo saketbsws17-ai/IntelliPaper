@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IQPG | Phase 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="loginPage" class="login-page">
+  <div class="login-card">
+    <div class="welcome">
+      <div class="logo">IQ</div>
+      <p class="eyebrow">SMART EXAMINATION SYSTEM</p>
+      <h1>Welcome to <span>IQPG</span></h1>
+      <p>Intelligent Question Paper Generation platform for a smarter examination workflow.</p>
+      <div class="orb">✦</div>
+      <div class="tags"><b>⚡ Smart</b><b>🔐 Secure</b><b>📊 Organized</b></div>
+    </div>
+
+    <div class="login">
+      <h2>Welcome Back 👋</h2>
+      <p class="muted">Sign in to access your workspace.</p>
+
+      <div class="roles">
+        <button class="role active" data-role="HOD">HOD</button>
+        <button class="role" data-role="Faculty">Faculty</button>
+        <button class="role" data-role="Admin">Admin</button>
+      </div>
+
+      <form id="loginForm">
+        <label>Username</label>
+        <input id="username" value="HOD" required>
+        <label>Password</label>
+        <input id="password" type="password" value="123456" required>
+        <button class="primary">Sign In <span>→</span></button>
+      </form>
+      <small class="hint">Phase 1 demo: any credentials work.</small>
+    </div>
+  </div>
+</section>
+
+<section id="app" class="hidden">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-logo">IQ</div><b>IQPG</b></div>
+    <nav id="nav"></nav>
+    <div class="user"><div class="avatar" id="avatar">H</div><div><b id="userName">HOD</b><small id="userRole">HOD / Paper Setter</small></div></div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div><p class="eyebrow">IQPG WORKSPACE</p><h2 id="title">Dashboard</h2></div>
+      <div class="top-actions"><button>🔔</button><button id="logout">↪</button></div>
+    </header>
+    <div id="content"></div>
+  </main>
+</section>
+
+<div id="toast" class="toast hidden"></div>
+<script src="script.js"></script>
+</body>
+</html>
